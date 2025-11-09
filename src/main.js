@@ -6,28 +6,21 @@ const resetBtn = document.getElementById("reset-btn");
 const audio = document.getElementById("myAudio");
 const breakOption = document.getElementById("break-select");
 const totalOption = document.getElementById("total-select");
-const toggleThemeBtn = document.getElementById("toggle-theme");
 
 let totalTime = 1500;
 let timerInterval = null;
 let breakTimeInterval = null;
 let isRunning = false;
 let breakTime = 300;
-// Check system theme
-if (localStorage.getItem("theme") === "dark") {
-  document.documentElement.classList.add("dark");
-  toggleThemeBtn.textContent = "Dark mode";
-} else {
-  document.documentElement.classList.remove("dark");
-  toggleThemeBtn.textContent = "Light mode";
-}
-// Toggle theme
-toggleThemeBtn.addEventListener("click", () => {
-  document.documentElement.classList.toggle("dark");
-  const isDark = document.documentElement.classList.contains("dark");
-  toggleThemeBtn.textContent = isDark ? "Dark mode" : "Light mode";
-  localStorage.setItem("theme", isDark ? "dark" : "light");
+// Import and render random background
+const bgImages = import.meta.glob("/src/assets/bg/*.png", {
+  eager: true,
+  as: "url",
 });
+const bgList = Object.values(bgImages);
+document.getElementById("bg").src =
+  bgList[Math.floor(Math.random() * bgList.length)];
+
 // Display timer
 function updateDisplay(time) {
   const minutes = Math.floor(time / 60);

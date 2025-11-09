@@ -6,50 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pomodoro Timer</title>
   </head>
-  <body class="bg-gray-100 dark:bg-gray-800 relative">
-    <button
-      id="toggle-theme"
-      class="absolute top-5 right-5 p-3 rounded-2xl text-gray-100 bg-blue-500 hover:bg-blue-600 transition-colors ease-in-out duration-300 hover:cursor-pointer"
-    >
-      Light mode
-    </button>
+  <body class="bg-cover relative min-h-screen overflow-hidden">
+    <img
+      id="bg"
+      src="/src/assets/bg/2.png"
+      alt="background-image"
+      class="absolute inset-0 w-full h-full object-cover brightness-50 -z-10"
+    />
+
     <main class="flex flex-col h-auto items-center gap-10">
-      <h1 class="text-7xl font-bold pt-8 dark:text-gray-100">Pomodoro Timer</h1>
+      <h1 class="text-7xl font-bold pt-8 text-gray-100">Pomodoro Timer</h1>
       <div class="w-full max-w-md flex justify-center gap-10 text-lg">
         <button
           id="start-btn"
-          class="w-30 h-10 border border-gray-300 dark:border-gray-700 bg-blue-500 shadow-lg shadow-blue-500/50 text-gray-100 font-semibold hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors ease-in-out duration-300 rounded-lg cursor-pointer"
+          class="w-30 h-10 border border-gray-300 bg-gray-500/5 backdrop-blur-sm shadow-lg shadow-blue-500/50 text-gray-100 font-semibold hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors ease-in-out duration-300 rounded-md cursor-pointer"
         >
           Start
         </button>
         <button
           id="pause-btn"
-          class="w-30 h-10 border border-gray-300 dark:border-gray-700 bg-blue-500 shadow-lg shadow-blue-500/50 text-gray-100 font-semibold hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors ease-in-out duration-300 rounded-lg cursor-pointer"
+          class="w-30 h-10 border border-gray-300 bg-gray-500/5 backdrop-blur-sm shadow-lg shadow-blue-500/50 text-gray-100 font-semibold hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors ease-in-out duration-300 rounded-md cursor-pointer"
         >
           Pause
         </button>
         <button
           id="reset-btn"
-          class="w-30 h-10 border border-gray-300 dark:border-gray-700 bg-blue-500 shadow-lg shadow-blue-500/50 text-gray-100 font-semibold hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors ease-in-out duration-300 rounded-lg cursor-pointer"
+          class="w-30 h-10 border border-gray-300 bg-gray-500/5 backdrop-blur-sm shadow-lg shadow-blue-500/50 text-gray-100 font-semibold hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors ease-in-out duration-300 rounded-md cursor-pointer"
         >
           Reset
         </button>
       </div>
       <div
-        class="w-full max-w-md flex justify-center gap-6 p-6 rounded-2xl text-lg bg-blue-500 shadow-lg shadow-blue-500/50"
+        class="w-full max-w-md flex justify-center gap-6 p-6 rounded-2xl text-lg border border-gray-300 bg-gray-500/5 backdrop-blur-sm shadow-lg shadow-blue-500/50"
       >
         <div
           class="text-gray-800 p-4 rounded-xl flex flex-col items-center gap-2 w-1/2"
         >
           <label
             for="total-select"
-            class="font-semibold text-sm uppercase tracking-wide dark:text-white"
+            class="font-semibold text-sm uppercase tracking-wide text-white"
           >
             Choose Study Time
           </label>
           <select
             id="total-select"
-            class="bg-white text-gray-800 px-3 py-2 rounded-lg w-full text-center focus:outline-none focus:ring-2 focus:ring-pink-300 cursor-pointer"
+            class="border-gray-300 bg-gray-500/5 backdrop-blur-sm shadow-lg shadow-blue-500/50 text-gray-100 px-3 py-2 rounded-lg w-full text-center focus:outline-none focus:ring-1 focus:ring-blue-300 cursor-pointer"
           >
             <option value="1500">25 Minutes</option>
             <option value="1800">30 Minutes</option>
@@ -62,13 +63,13 @@
         >
           <label
             for="break-select"
-            class="font-semibold text-sm uppercase tracking-wide dark:text-white"
+            class="font-semibold text-sm uppercase tracking-wide text-white"
           >
             Choose Break Time
           </label>
           <select
             id="break-select"
-            class="bg-white text-gray-800 px-3 py-2 rounded-lg w-full text-center focus:outline-none focus:ring-2 focus:ring-pink-300 cursor-pointer"
+            class="border-gray-300 bg-gray-500/5 backdrop-blur-sm shadow-lg shadow-blue-500/50 text-gray-100 px-3 py-2 rounded-lg w-full text-center focus:outline-none focus:ring-1 focus:ring-blue-300 cursor-pointer"
           >
             <option value="300">5 Minutes</option>
             <option value="900">15 Minutes</option>
@@ -79,7 +80,7 @@
     <div class="flex justify-center pt-10">
       <h2
         id="time-display"
-        class="text-9xl font-bold shadow-md p-4 rounded-xl dark:text-gray-100"
+        class="text-9xl font-bold p-4 rounded-xl text-gray-100 border border-gray-300 bg-gray-500/5 backdrop-blur-sm shadow-lg shadow-blue-500/50"
       ></h2>
     </div>
     <audio id="myAudio" src="./src/assets/teoteoteo.mp3" hidden></audio>
