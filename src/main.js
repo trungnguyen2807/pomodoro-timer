@@ -51,6 +51,9 @@ function startTimer() {
       clearInterval(timerInterval);
       isRunning = false;
       audio.play();
+      setTimeout(function () {
+        audio.ended();
+      }, 10000);
       alert("Nghỉ tý đi cu ơi");
       startBreak();
     }
@@ -84,6 +87,9 @@ function startBreak() {
       clearInterval(breakTimeInterval);
       isRunning = false;
       audio.play();
+      setTimeout(function () {
+        audio.ended();
+      }, 10000);
       alert("Tiếp tục đi cu ơi");
       startTimer();
     }
