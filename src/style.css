@@ -1,2 +1,8 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
+
+select option {
+    background-color: #1e293b;
+    /* slate-800 */
+    color: white;
+}
